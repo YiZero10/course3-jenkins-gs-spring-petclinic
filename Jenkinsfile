@@ -1,15 +1,7 @@
 pipeline{
     agent any
     
-    stages{
-        stage("checkout"){
-            steps{
-                sh "ls"
-                git branch:'main', url: 'https://github.com/YiZero10/course3-jenkins-gs-spring-petclinic'
-                sh "ls"
-            }
-        }
-        
+    stages{        
         stage("build"){
            steps{
                sh "./mvnw package"
